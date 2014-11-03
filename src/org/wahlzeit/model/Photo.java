@@ -23,6 +23,8 @@ package org.wahlzeit.model;
 import java.sql.*;
 import java.net.*;
 
+import org.wahlzeit.location.GPSLocation;
+import org.wahlzeit.location.Location;
 import org.wahlzeit.services.*;
 import org.wahlzeit.utils.*;
 
@@ -52,6 +54,11 @@ public class Photo extends DataObject {
 	public static final String IS_INVISIBLE = "isInvisible";
 	public static final String UPLOADED_ON = "uploadedOn";
 	
+	public static final String LATITUDE = "latitude";
+	public static final String LONGTITUDE = "longtitude";
+	public static final String MAPCODE = "mopcode";
+
+	
 	/**
 	 * 
 	 */
@@ -59,6 +66,9 @@ public class Photo extends DataObject {
 	public static final int MAX_PHOTO_HEIGHT = 600;
 	public static final int MAX_THUMB_PHOTO_WIDTH = 105;
 	public static final int MAX_THUMB_PHOTO_HEIGHT = 150;
+	
+	
+	protected Location location = null;
 	
 	/**
 	 * 
@@ -167,6 +177,11 @@ public class Photo extends DataObject {
 		creationTime = rset.getLong("creation_time");
 
 		maxPhotoSize = PhotoSize.getFromWidthHeight(width, height);
+
+
+		double lat = rset.getDouble("latitude");
+		double lon = rset.getDouble("longtitude");
+		location = new GPSLocation(lat, lon);
 	}
 	
 	/**
@@ -187,6 +202,8 @@ public class Photo extends DataObject {
 		rset.updateInt("praise_sum", praiseSum);
 		rset.updateInt("no_votes", noVotes);
 		rset.updateLong("creation_time", creationTime);		
+		rset.updateDouble("latitude", location.getLatitude());
+		rset.updateDouble("longtitude", location.getLongtitude());
 	}
 
 	/**
@@ -471,6 +488,13 @@ public class Photo extends DataObject {
 	public void setTags(Tags newTags) {
 		tags = newTags;
 		incWriteCount();
+	}
+	
+	public void setLocation(String latitude, String longtitude)
+	{
+		double lat = Double.parseDouble(latitude);
+		double lon = Double.parseDouble(longtitude);
+		this.location = new GPSLocation(lat, lon);
 	}
 	
 	/**

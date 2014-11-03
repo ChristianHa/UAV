@@ -57,6 +57,9 @@ public class UploadPhotoFormHandler extends AbstractWebFormHandler {
 	 */
 	protected String doHandlePost(UserSession us, Map args) {
 		String tags = us.getAndSaveAsString(args, Photo.TAGS);
+		String latitude = us.getAndSaveAsString(args, Photo.LATITUDE);
+		String longtitude = us.getAndSaveAsString(args, Photo.LONGTITUDE);
+		String mapcode = us.getAndSaveAsString(args, Photo.MAPCODE);
 
 		if (!StringUtil.isLegalTagsString(tags)) {
 			us.setMessage(us.cfg().getInputIsInvalid());
@@ -76,6 +79,7 @@ public class UploadPhotoFormHandler extends AbstractWebFormHandler {
 			user.addPhoto(photo); 
 			
 			photo.setTags(new Tags(tags));
+			photo.setLocation(latitude, longtitude);
 
 			pm.savePhoto(photo);
 
