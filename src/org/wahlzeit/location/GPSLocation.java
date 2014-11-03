@@ -51,6 +51,6 @@ public class GPSLocation extends LocationDefImpl {
 				e.printStackTrace();
 			}
 			this.latitude = p.getLatDeg();
-			this.latitude = p.getLonDeg();
+			this.longtitude = p.getLonDeg();
 	}
 }

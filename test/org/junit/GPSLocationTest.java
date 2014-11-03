@@ -13,26 +13,21 @@ public class GPSLocationTest {
 
 	}
 
-	@After
-	public void tearDown() throws Exception {
+	@Test
+	public void TestGetLatitude()
+	{
+		assertTrue(51.041394 == loc.getLatitude());
 	}
-
-//	@Test
-//	public void TestGetMapcode() {
-//		System.out.println(loc.getMapcode());
-//		assertEquals("VJH79.B3B0", loc.getMapcode());
-//	}
 	
 	@Test
 	public void TestDoSetMapcode() {
-		System.out.println(loc.getMapcode());
-		assertEquals("VJH79.B3B0", loc.getMapcode());
+		loc.setMapcode("LJ72Z.3T6M");
+		assertTrue(loc.getMapcode().contains("LJ72Z.3T6M"));
 	}
 	
 	@Test
 	public void TestGetMapcode() {
-		System.out.println(loc.getMapcode());
-		assertEquals("VJH79.B3B0", loc.getMapcode());
+		assertTrue(loc.getMapcode().contains("VJH79.B3B0"));
 	}
 
 }
