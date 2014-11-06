@@ -9,10 +9,18 @@ public class GPSLocation extends LocationDefImpl {
 	protected double latitude;
 	protected double longtitude;
 	
+	
+
 	public GPSLocation(double latitude, double longtitude)
 	{
 		this.latitude = latitude;
 		this.longtitude = longtitude;
+	}
+	
+	public GPSLocation() 
+	{
+		latitude = 0;
+		longtitude = 0;	
 	}
 	
 	@Override

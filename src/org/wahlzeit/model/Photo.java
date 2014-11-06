@@ -56,7 +56,9 @@ public class Photo extends DataObject {
 	
 	public static final String LATITUDE = "latitude";
 	public static final String LONGTITUDE = "longtitude";
-	public static final String MAPCODE = "mopcode";
+	public static final String MAPCODE = "mapcode";
+	public static final String LOCATION = "location";
+
 
 	
 	/**
@@ -68,7 +70,7 @@ public class Photo extends DataObject {
 	public static final int MAX_THUMB_PHOTO_HEIGHT = 150;
 	
 	
-	protected Location location = null;
+	protected Location location = new GPSLocation(0.0, 0.0);
 	
 	/**
 	 * 
@@ -495,6 +497,11 @@ public class Photo extends DataObject {
 		double lat = Double.parseDouble(latitude);
 		double lon = Double.parseDouble(longtitude);
 		this.location = new GPSLocation(lat, lon);
+	}
+	
+	public String getLocation()
+	{
+		return this.location.getLatitude() + " " + this.location.getLongtitude();
 	}
 	
 	/**
