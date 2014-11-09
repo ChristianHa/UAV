@@ -79,13 +79,13 @@ public class UploadPhotoFormHandler extends AbstractWebFormHandler {
 			user.addPhoto(photo); 
 			
 			photo.setTags(new Tags(tags));
-			if (latitude.equalsIgnoreCase("") && longtitude.equalsIgnoreCase(""))
+			if (!latitude.equalsIgnoreCase("") && !longtitude.equalsIgnoreCase(""))
 			{
-			photo.setMapcode(mapcode);
+				photo.setLocation(latitude, longtitude);
 			}
-			else
+			else if (!mapcode.equalsIgnoreCase(""))
 			{
-			photo.setLocation(latitude, longtitude);
+				photo.setMapcode(mapcode);
 			}
 
 			pm.savePhoto(photo);
