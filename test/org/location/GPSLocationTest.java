@@ -1,7 +1,9 @@
-package org.junit;
+package org.location;
 
 import static org.junit.Assert.*;
 
+import org.junit.Before;
+import org.junit.Test;
 import org.wahlzeit.location.GPSLocation;
 
 public class GPSLocationTest {

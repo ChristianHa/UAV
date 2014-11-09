@@ -1,4 +1,4 @@
-package org.junit;
+package org.location;
 
 import org.wahlzeit.location.MapcodeLocation;
 
