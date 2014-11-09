@@ -25,6 +25,7 @@ import java.net.*;
 
 import org.wahlzeit.location.GPSLocation;
 import org.wahlzeit.location.Location;
+import org.wahlzeit.location.MapcodeLocation;
 import org.wahlzeit.services.*;
 import org.wahlzeit.utils.*;
 
@@ -502,6 +503,11 @@ public class Photo extends DataObject {
 	public String getLocation()
 	{
 		return this.location.getLatitude() + ", " + this.location.getLongtitude();
+	}
+	
+	public void setMapcode(String mapcode)
+	{
+		this.location.setMapcode(mapcode);
 	}
 	
 	/**
