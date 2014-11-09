@@ -13,7 +13,7 @@ public class MapcodeLocation extends LocationDefImpl {
 	}
 	
 	@Override
-	public double getLatitude() {
+	public double doGetLatitude() {
 		double latitude = getLatitudeFromMapcode();
 		return latitude;
 	}
@@ -29,14 +29,14 @@ public class MapcodeLocation extends LocationDefImpl {
 	}
 
 	@Override
-	public void setLatitude(double latitude) {
+	public void doSetLatitude(double latitude) {
 		double longtitude = getLongtitude();
 		com.mapcode.Mapcode result = MapcodeCodec.encodeToInternational(latitude, longtitude);
 		this.mapcode = result.toString();
 	}
 
 	@Override
-	public double getLongtitude() {
+	public double doGetLongtitude() {
 		double longtitude = getLongtitudeFromMapcode();
 		return longtitude;
 	}
@@ -52,7 +52,7 @@ public class MapcodeLocation extends LocationDefImpl {
 	}
 
 	@Override
-	public void setLongtitude(double longtitude) {
+	public void doSetLongtitude(double longtitude) {
 		double latitude = getLatitude();
 		com.mapcode.Mapcode result = MapcodeCodec.encodeToInternational(latitude, longtitude);
 		this.mapcode = result.toString();
@@ -64,7 +64,7 @@ public class MapcodeLocation extends LocationDefImpl {
 	}
 
 	@Override
-	public String getMapcode() {
+	public String doGetMapcode() {
 		return this.mapcode;
 	}
 }

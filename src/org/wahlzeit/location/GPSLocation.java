@@ -9,7 +9,6 @@ public class GPSLocation extends LocationDefImpl {
 	protected double latitude;
 	protected double longtitude;
 	
-	
 
 	public GPSLocation(double latitude, double longtitude)
 	{
@@ -24,27 +23,27 @@ public class GPSLocation extends LocationDefImpl {
 	}
 	
 	@Override
-	public double getLatitude() {
+	public double doGetLatitude() {
 		return this.latitude;
 	}
 	
 	@Override
-	public void setLatitude(double latitude) {
+	public void doSetLatitude(double latitude) {
 		this.latitude = latitude;
 	}
 
 	@Override
-	public double getLongtitude() {
+	public double doGetLongtitude() {
 		return this.longtitude;
 	}
 	
 	@Override
-	public void setLongtitude(double longtitude) {
+	public void doSetLongtitude(double longtitude) {
 		this.longtitude = longtitude; 
 	}
 
 	@Override
-	public String getMapcode() {
+	public String doGetMapcode() {
 		com.mapcode.Mapcode result = MapcodeCodec.encodeToInternational(latitude, longtitude);
 		String mapcode = result.toString();
 		return mapcode;

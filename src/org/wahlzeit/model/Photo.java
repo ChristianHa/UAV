@@ -501,7 +501,7 @@ public class Photo extends DataObject {
 	
 	public String getLocation()
 	{
-		return this.location.getLatitude() + " " + this.location.getLongtitude();
+		return this.location.getLatitude() + ", " + this.location.getLongtitude();
 	}
 	
 	/**
