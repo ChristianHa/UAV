@@ -23,10 +23,10 @@ package org.wahlzeit.model;
 import java.sql.*;
 import java.net.*;
 
-import org.wahlzeit.location.GPSLocation;
-import org.wahlzeit.location.Location;
-import org.wahlzeit.location.MapcodeLocation;
 import org.wahlzeit.services.*;
+import org.wahlzeit.uav.GPSLocation;
+import org.wahlzeit.uav.Location;
+import org.wahlzeit.uav.MapcodeLocation;
 import org.wahlzeit.utils.*;
 
 /**

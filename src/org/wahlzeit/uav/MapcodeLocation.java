@@ -1,4 +1,4 @@
-package org.wahlzeit.location;
+package org.wahlzeit.uav;
 
 import com.mapcode.MapcodeCodec;
 import com.mapcode.Point;
