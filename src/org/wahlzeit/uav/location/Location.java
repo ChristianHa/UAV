@@ -1,4 +1,4 @@
-package org.wahlzeit.uav;
+package org.wahlzeit.uav.location;
 
 public interface Location {
 	double getLatitude();

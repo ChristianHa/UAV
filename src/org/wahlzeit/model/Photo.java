@@ -24,9 +24,9 @@ import java.sql.*;
 import java.net.*;
 
 import org.wahlzeit.services.*;
-import org.wahlzeit.uav.GPSLocation;
-import org.wahlzeit.uav.Location;
-import org.wahlzeit.uav.MapcodeLocation;
+import org.wahlzeit.uav.location.GPSLocation;
+import org.wahlzeit.uav.location.Location;
+import org.wahlzeit.uav.location.MapcodeLocation;
 import org.wahlzeit.utils.*;
 
 /**

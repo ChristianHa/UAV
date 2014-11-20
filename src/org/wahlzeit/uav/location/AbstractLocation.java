@@ -1,6 +1,7 @@
-package org.wahlzeit.uav;
+package org.wahlzeit.uav.location;
 
-public abstract class LocationDefImpl implements Location {
+
+public abstract class AbstractLocation implements Location {
 	
 	public double getLatitude()
 	{

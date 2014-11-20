@@ -1,10 +1,10 @@
-package org.wahlzeit.uav;
+package org.wahlzeit.uav.location;
 
 import com.mapcode.MapcodeCodec;
 import com.mapcode.Point;
 import com.mapcode.UnknownMapcodeException;
 
-public class MapcodeLocation extends LocationDefImpl {
+public class MapcodeLocation extends AbstractLocation {
 
 	protected String mapcode;
 
