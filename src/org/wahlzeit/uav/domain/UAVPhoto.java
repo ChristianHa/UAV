@@ -19,13 +19,15 @@ public class UAVPhoto extends Photo {
 	/**
 	 * @pre minFlightDistance must be positiv
 	 */
-	
-	public UAVPhoto(String name, UAVManufactor manufactor,
-			int minFlightDistance, int weight, int height, int width) {
+	public UAVPhoto(String name, UAVManufactor manufactor, Engine engine,
+			int minFlightDistance, Camera cam, boolean hasCamera) {
 		super();
 		this.name = name;
 		this.manufactor = manufactor;
+		this.engine = engine;
 		this.minFlightDistance = minFlightDistance;
+		this.cam = cam;
+		this.hasCamera = hasCamera;
 	}
 	
 	public void setName(String name) {
@@ -37,7 +39,7 @@ public class UAVPhoto extends Photo {
 	}
 	
 	/**
-	 * @pre minFlightDistance must be positiv
+	 * @pre minFlightDistance has to be positive
 	 */
 	
 	public void setMinFlightDistance(int minFlightDistance) {
@@ -45,19 +47,12 @@ public class UAVPhoto extends Photo {
 		this.minFlightDistance = minFlightDistance;
 	}
 	
-	/**
-	 * @pre engine does not be null
-	 */
+
 	public void setEngine(Engine engine) {
-		assert engine != null;
 		this.engine = engine;
 	}
 
-	/**
-	 * @pre cam does not be null
-	 */
 	public void setCam(Camera cam) {
-		assert cam != null;
 		this.cam = cam;
 	}
 
@@ -74,7 +69,7 @@ public class UAVPhoto extends Photo {
 	}
 
 	/**
-	 * @post minFlightDistance is positiv
+	 * @post minFlightDistance is positive
 	 */
 	public int getMinFlightDistance() {
 		assert this.minFlightDistance > 0;
@@ -86,16 +81,16 @@ public class UAVPhoto extends Photo {
 	}
 
 	/**
-	 * @pre hasCamera must be true
+	 * @pre hasCamera has to be true
 	 * @post don't return null
 	 */
 	public Camera getCam() {
-		assert this.hasCamera == true;
-		assert this.cam != null;
+		assert this.hasCamera == true; //pre
+		assert this.cam != null; //post
 		return cam;
 	}
 
-	public boolean isHasCamera() {
+	public boolean hasCamera() {
 		return hasCamera;
 	}
 	
