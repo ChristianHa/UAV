@@ -31,7 +31,15 @@ CREATE TABLE photos (
 	no_votes integer,
 	creation_time bigint,
 	latitude decimal,
-	longtitude decimal
+	longtitude decimal,
+	name text,
+	manufactor text,
+	minFlightDistance integer,
+	hasCamera boolean,
+	enginetyp text,
+	horsepower integer,
+	resolution integer,
+	infrared boolean
 );
 
 CREATE TABLE tags (
