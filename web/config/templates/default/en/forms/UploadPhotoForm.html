@@ -18,14 +18,33 @@
 			<td class="twoCol2"><input type="text" name="longtitude" value="{$longtitude}" size="48" /></td>
 		</tr>
 		<tr>
-			<td class="twoCol1">orMapcode:&nbsp;</td>
-			<td class="twoCol2"><input type="text" name="mapcode" value="{$mapcode}" size="48" /></td>
+			<td class="twoCol1">Name of the UAV:&nbsp;</td>
+			<td class="twoCol2"><input type="text" name="name" value="{$name}" size="48" /></td>
+		</tr>
+		<tr>
+		<td class="twoCol1">Choose UAVManufactor:&nbsp;</td>
+		<td>
+		<p>
+    		<select name="manufactor" size="3">
+      			<option>NORTHROP_GRUMMAN</option>
+			    <option>LOCKHEED_MARTIN</option>
+			    <option>BOING</option>
+			    <option>UMS_Group</option>
+			    <option>AMAZON</option>
+			    <option>HUBSAN</option>
+			    <option>PARROT</option>
+			    <option>SIMULUS</option>
+    		</select>
+    	</p>
+    	</td>
 		</tr>
 		<tr>
 			<td class="twoCol1">&nbsp;</td>
 			<td class="twoCol2"><input type="submit" name="upload" value="Upload!" /></td>
 		</tr>
 	</table></td></tr></table>
+	
+
 	
 	<p>
 		If you need to upload many photos at once, 

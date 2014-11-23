@@ -86,48 +86,6 @@ public class UAVPhoto extends Photo {
 	rset.updateBoolean(INFRARED, cam.isInfrared());
 	}
 	
-//	/**
-//	 * @pre minFlightDistance must be positiv
-//	 */
-//	public UAVPhoto(String name, UAVManufactor manufactor, Engine engine,
-//			int minFlightDistance, Camera cam, boolean hasCamera) {
-//		super();
-//		this.name = name;
-//		this.manufactor = manufactor;
-//		this.engine = engine;
-//		this.minFlightDistance = minFlightDistance;
-//		this.cam = cam;
-//		this.hasCamera = hasCamera;
-//	}
-	
-	public void setName(String name) {
-		this.name = name;
-	}
-	
-	public void setManufactor(UAVManufactor manufactor) {
-		this.manufactor = manufactor;
-	}
-	
-	/**
-	 * @pre minFlightDistance has to be positive
-	 */
-	public void setMinFlightDistance(int minFlightDistance) {
-		assert minFlightDistance > 0;
-		this.minFlightDistance = minFlightDistance;
-	}
-	
-
-	public void setEngine(Engine engine) {
-		this.engine = engine;
-	}
-
-	public void setCam(Camera cam) {
-		this.cam = cam;
-	}
-
-	public void setHasCamera(boolean hasCamera) {
-		this.hasCamera = hasCamera;
-	}
 
 	public String getName() {
 		return name;
