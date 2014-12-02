@@ -12,10 +12,7 @@ import org.wahlzeit.model.PhotoId;
  */
 public class UAVPhoto extends Photo {
 
-	
-	protected Engine engine = new Engine();
-	protected Camera cam = new Camera();
-	
+	protected UAV uav;
 	
 	private static final String NAME = "name";
 	private static final String MANUFACTOR = "manufactor";
@@ -29,12 +26,6 @@ public class UAVPhoto extends Photo {
 	private static final String INFRARED = "infrared";
 
 
-	private String name;
-	private UAVManufactor manufactor;
-	private int minFlightDistance;
-	private boolean hasCamera;
-	
-	
 	public UAVPhoto()
 	{
 		super();
@@ -84,41 +75,6 @@ public class UAVPhoto extends Photo {
 	
 	rset.updateInt(RESOLUTION, cam.getResolution());
 	rset.updateBoolean(INFRARED, cam.isInfrared());
-	}
-	
-
-	public String getName() {
-		return name;
-	}
-
-	public UAVManufactor getManufactor() {
-		return manufactor;
-	}
-
-	/**
-	 * @post minFlightDistance is positive
-	 */
-	public int getMinFlightDistance() {
-		assert this.minFlightDistance > 0;
-		return minFlightDistance;
-	}
-
-	public Engine getEngine() {
-		return engine;
-	}
-
-	/**
-	 * @pre hasCamera has to be true
-	 * @post don't return null
-	 */
-	public Camera getCam() {
-		assert this.hasCamera == true; //pre
-		assert this.cam != null; //post
-		return cam;
-	}
-
-	public boolean hasCamera() {
-		return hasCamera;
 	}
 	
 }
