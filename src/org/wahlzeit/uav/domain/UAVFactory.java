@@ -7,6 +7,9 @@ public class UAVFactory {
 
 	private static Map<Integer, UAV> sharedUAVMap = new WeakHashMap<>();
 	
+	/**
+	 * @methodtype factory
+	 */
 	public static synchronized UAV getInstance(Engine engine, Camera cam, String name,
 			UAVManufactor manufactor, int minFlightDistance, boolean hasCamera)
 	{

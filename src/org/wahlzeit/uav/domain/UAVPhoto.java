@@ -46,18 +46,18 @@ public class UAVPhoto extends Photo {
 	{
 		super.readFrom(rset);
 		
-		name = rset.getString(NAME);
-		manufactor  = UAVManufactor.valueOf(rset.getString(MANUFACTOR));
-		minFlightDistance = rset.getInt(MINFLIGHTDISTANCE);
-		hasCamera = rset.getBoolean(HASCAMERA);
+		String name = rset.getString(NAME);
+		UAVManufactor manufactor  = UAVManufactor.valueOf(rset.getString(MANUFACTOR));
+		int minFlightDistance = rset.getInt(MINFLIGHTDISTANCE);
+		boolean hasCamera = rset.getBoolean(HASCAMERA);
 		
 		EngineType motor = EngineType.valueOf(rset.getString(ENGINETYP));
 		int horsepower = rset.getInt(HORSEPOWER);
-		this.engine = new Engine(motor, horsepower);
 		
 		int resolution = rset.getInt(RESOLUTION);
 		boolean infrared = rset.getBoolean(INFRARED);
-		this.cam = new Camera(resolution, infrared);
+		
+		uav = UAVFactory.getInstance(new Engine(motor, horsepower), new Camera(resolution, infrared), name, manufactor, minFlightDistance, hasCamera);
 	}
 	
 	@Override
@@ -65,16 +65,16 @@ public class UAVPhoto extends Photo {
 	{
 	super.writeOn(rset);
 	
-	rset.updateString(NAME, name);
-	rset.updateString(MANUFACTOR, manufactor.name());
-	rset.updateInt(MINFLIGHTDISTANCE, minFlightDistance);
-	rset.updateBoolean(HASCAMERA, hasCamera);
+	rset.updateString(NAME, uav.getName());
+	rset.updateString(MANUFACTOR, uav.getManufactor().name());
+	rset.updateInt(MINFLIGHTDISTANCE, uav.getMinFlightDistance());
+	rset.updateBoolean(HASCAMERA, uav.hasCamera());
 	
-	rset.updateString(ENGINETYP, engine.getMotor().name());
-	rset.updateInt(HORSEPOWER, engine.getHorsepower());
+	rset.updateString(ENGINETYP, uav.getEngine().getMotor().name());
+	rset.updateInt(HORSEPOWER, uav.getEngine().getHorsepower());
 	
-	rset.updateInt(RESOLUTION, cam.getResolution());
-	rset.updateBoolean(INFRARED, cam.isInfrared());
+	rset.updateInt(RESOLUTION, uav.cam.getResolution());
+	rset.updateBoolean(INFRARED, uav.getCam().isInfrared());
 	}
 	
 }

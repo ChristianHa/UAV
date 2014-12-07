@@ -1,6 +1,8 @@
 package org.wahlzeit.uav.domain;
 
-public class UAV {
+
+public class UAV
+{
 	protected Engine engine = new Engine();
 	protected Camera cam = new Camera();
 	
@@ -9,7 +11,9 @@ public class UAV {
 	private int minFlightDistance;
 	private boolean hasCamera;
 	
-	
+	/**
+	 * @methodtype construktor
+	 */
 	public UAV(Engine engine, Camera cam, String name,
 			UAVManufactor manufactor, int minFlightDistance, boolean hasCamera) {
 		super();

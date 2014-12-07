@@ -6,7 +6,10 @@ import java.util.Map;
 public class ResolutionFactory {
 	private static Map<String, Resolution> resolutionMap = new HashMap<>();
 	
-	public static Resolution getResolution(int width, int height)
+	/**
+	 * @methodtype factory
+	 */
+	public static synchronized Resolution getResolution(int width, int height)
 	{
 		String inputResolution = new StringBuilder().append(width)
 													.append(height)

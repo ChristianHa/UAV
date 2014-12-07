@@ -20,14 +20,17 @@
 
 package org.wahlzeit.model;
 
-import java.sql.*;
-import java.net.*;
+import java.net.URL;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
-import org.wahlzeit.services.*;
+import org.wahlzeit.services.DataObject;
+import org.wahlzeit.services.EmailAddress;
+import org.wahlzeit.services.Language;
 import org.wahlzeit.uav.location.GPSLocation;
 import org.wahlzeit.uav.location.Location;
-import org.wahlzeit.uav.location.MapcodeLocation;
-import org.wahlzeit.utils.*;
+import org.wahlzeit.utils.StringUtil;
 
 /**
  * A photo represents a user-provided (uploaded) photo.
