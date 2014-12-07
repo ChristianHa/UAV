@@ -13,6 +13,8 @@ public class UAV
 	
 	/**
 	 * @methodtype construktor
+	 * @pre minFlightDistance has to be positive
+	 * 
 	 */
 	public UAV(Engine engine, Camera cam, String name,
 			UAVManufactor manufactor, int minFlightDistance, boolean hasCamera) {

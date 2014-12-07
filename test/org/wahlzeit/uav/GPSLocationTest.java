@@ -1,4 +1,4 @@
-package org.location;
+package org.wahlzeit.uav;
 
 import static org.junit.Assert.*;
 
