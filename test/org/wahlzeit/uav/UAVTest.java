@@ -8,7 +8,7 @@ import org.wahlzeit.uav.domain.Camera;
 import org.wahlzeit.uav.domain.Engine;
 import org.wahlzeit.uav.domain.EngineType;
 import org.wahlzeit.uav.domain.UAV;
-import org.wahlzeit.uav.domain.UAVManufactor;
+import org.wahlzeit.uav.domain.Manufactor;
 
 public class UAVTest {
 
@@ -20,14 +20,14 @@ public class UAVTest {
 		uavSucess = new UAV(new Engine(EngineType.ELECTRONIC, 1), 
 							new Camera(1024, false), 	
 							"HubsanX4",
-							UAVManufactor.HUBSAN,
+							Manufactor.HUBSAN,
 							3,
 							true);
 		
 		uavFail = new UAV(new Engine(EngineType.GASOLINE, 1),
 						  new Camera(1024, false), 
 						  "HubsanX4",
-						  UAVManufactor.HUBSAN,
+						  Manufactor.HUBSAN,
 						  -23, 
 						  false);
 	}

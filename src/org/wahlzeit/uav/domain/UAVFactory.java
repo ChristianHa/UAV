@@ -11,7 +11,7 @@ public class UAVFactory {
 	 * @methodtype factory
 	 */
 	public static synchronized UAV getInstance(Engine engine, Camera cam, String name,
-			UAVManufactor manufactor, int minFlightDistance, boolean hasCamera)
+			Manufactor manufactor, int minFlightDistance, boolean hasCamera)
 	{
 		Integer hash = new StringBuilder().append(engine.hashCode())
 										 .append(cam.hashCode())

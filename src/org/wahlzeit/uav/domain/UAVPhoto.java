@@ -47,7 +47,7 @@ public class UAVPhoto extends Photo {
 		super.readFrom(rset);
 		
 		String name = rset.getString(NAME);
-		UAVManufactor manufactor  = UAVManufactor.valueOf(rset.getString(MANUFACTOR));
+		Manufactor manufactor  = Manufactor.valueOf(rset.getString(MANUFACTOR));
 		int minFlightDistance = rset.getInt(MINFLIGHTDISTANCE);
 		boolean hasCamera = rset.getBoolean(HASCAMERA);
 		

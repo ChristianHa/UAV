@@ -12,6 +12,7 @@ public class ResolutionFactory {
 	public static synchronized Resolution getResolution(int width, int height)
 	{
 		String inputResolution = new StringBuilder().append(width)
+													.append("+")
 													.append(height)
 													.toString();
 		
