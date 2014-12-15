@@ -15,7 +15,6 @@ public class UAVPhoto extends Photo {
 	protected UAV uav;
 	
 	private static final String NAME = "name";
-	private static final String MANUFACTOR = "manufactor";
 	private static final String MINFLIGHTDISTANCE = "minFlightDistance";
 	private static final String HASCAMERA = "hasCamera";
 	
@@ -24,6 +23,11 @@ public class UAVPhoto extends Photo {
 
 	private static final String RESOLUTION = "resolution";
 	private static final String INFRARED = "infrared";
+	
+	private static final String COMPANYNAME = "companyname";
+	private static final String FOUNDINGDATE = "foundingDate";
+	private static final String EMPLOYEES= "employees";
+	private static final String HEADQUARTER = "headquarter";
 
 
 	public UAVPhoto()
@@ -46,8 +50,14 @@ public class UAVPhoto extends Photo {
 	{
 		super.readFrom(rset);
 		
+		String companyname = rset.getString(COMPANYNAME);
+		int foundingDate = rset.getInt(FOUNDINGDATE);
+		int employees = rset.getInt(EMPLOYEES);
+		String headquarter = rset.getString(HEADQUARTER);
+		
+		Manufactor uavmanufactor = ManufactorFactory.getInstance(companyname, foundingDate, employees, headquarter);
+		
 		String name = rset.getString(NAME);
-		Manufactor manufactor  = Manufactor.valueOf(rset.getString(MANUFACTOR));
 		int minFlightDistance = rset.getInt(MINFLIGHTDISTANCE);
 		boolean hasCamera = rset.getBoolean(HASCAMERA);
 		
@@ -57,7 +67,7 @@ public class UAVPhoto extends Photo {
 		int resolution = rset.getInt(RESOLUTION);
 		boolean infrared = rset.getBoolean(INFRARED);
 		
-		uav = UAVFactory.getInstance(new Engine(motor, horsepower), new Camera(resolution, infrared), name, manufactor, minFlightDistance, hasCamera);
+		uav = UAVFactory.getInstance(new Engine(motor, horsepower), new Camera(resolution, infrared), name, uavmanufactor, minFlightDistance, hasCamera);
 	}
 	
 	@Override
@@ -65,8 +75,13 @@ public class UAVPhoto extends Photo {
 	{
 	super.writeOn(rset);
 	
+	rset.updateString(COMPANYNAME, uav.getManufactor().getCompanyName());
+	rset.updateInt(FOUNDINGDATE, uav.getManufactor().getFoundingDate());
+	rset.updateInt(EMPLOYEES, uav.getManufactor().getEmployees());
+	rset.updateString(HEADQUARTER, uav.getManufactor().getCompanyName());
+	
+	
 	rset.updateString(NAME, uav.getName());
-	rset.updateString(MANUFACTOR, uav.getManufactor().name());
 	rset.updateInt(MINFLIGHTDISTANCE, uav.getMinFlightDistance());
 	rset.updateBoolean(HASCAMERA, uav.hasCamera());
 	

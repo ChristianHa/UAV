@@ -1,16 +1,15 @@
 package org.wahlzeit.uav.domain;
 
-import java.util.Date;
 
 public class Manufactor {
 	// NORTHROP_GRUMMAN, LOCKHEED_MARTIN, BOING, UMS_Group, AMAZON, HUBSAN, PARROT, SIMULUS;
 	private String companyName;
-	private Date foundingDate;
+	private int foundingDate;
 	private int employees;
 	private String headquarter;
 	
 	
-	protected Manufactor(String companyName, Date foundingDate, int employees,
+	protected Manufactor(String companyName, int foundingDate, int employees,
 			String headquarter) {
 		this.companyName = companyName;
 		this.foundingDate = foundingDate;
@@ -23,7 +22,7 @@ public class Manufactor {
 	}
 
 
-	public Date getFoundingDate() {
+	public int getFoundingDate() {
 		return foundingDate;
 	}
 

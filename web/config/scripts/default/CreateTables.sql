@@ -39,7 +39,11 @@ CREATE TABLE photos (
 	enginetyp text,
 	horsepower integer,
 	resolution integer,
-	infrared boolean
+	infrared boolean,
+	companyname text,
+	foundingDate integer,
+	employees integer,
+	headquarter text
 );
 
 CREATE TABLE tags (

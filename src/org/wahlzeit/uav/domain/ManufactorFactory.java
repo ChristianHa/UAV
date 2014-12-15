@@ -1,6 +1,5 @@
 package org.wahlzeit.uav.domain;
 
-import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -11,11 +10,11 @@ public class ManufactorFactory {
 	/**
 	 * @methodtype factory
 	 */
-	public static synchronized Manufactor getInstance(String companyName, Date foundingDate, int employees,
+	public static synchronized Manufactor getInstance(String companyName, int foundingDate, int employees,
 			String headquarter)
 	{
 		Integer hash = new StringBuilder().append(companyName.hashCode())
-										 .append(foundingDate.hashCode())
+										 .append(foundingDate)
 										 .append(employees)
 										 .append(headquarter.hashCode())
 										 .hashCode();
