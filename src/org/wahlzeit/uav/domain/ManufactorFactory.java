@@ -6,11 +6,21 @@ import java.util.Map;
 public class ManufactorFactory {
 	
 	private static Map<Integer, Manufactor> manufactorMap = new HashMap<>();
-
+	private static ManufactorFactory manufactorFactory = null;
+	
+	public static ManufactorFactory getInstance()
+	{
+		if (manufactorFactory == null)
+		{
+			manufactorFactory = new ManufactorFactory();
+		}
+		return manufactorFactory;
+	}
+	
 	/**
 	 * @methodtype factory
 	 */
-	public static synchronized Manufactor getInstance(String companyName, int foundingDate, int employees,
+	public synchronized Manufactor createInstance(String companyName, int foundingDate, int employees,
 			String headquarter)
 	{
 		Integer hash = new StringBuilder().append(companyName.hashCode())

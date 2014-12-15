@@ -55,7 +55,7 @@ public class UAVPhoto extends Photo {
 		int employees = rset.getInt(EMPLOYEES);
 		String headquarter = rset.getString(HEADQUARTER);
 		
-		Manufactor uavmanufactor = ManufactorFactory.getInstance(companyname, foundingDate, employees, headquarter);
+		Manufactor uavmanufactor = ManufactorFactory.getInstance().createInstance(companyname, foundingDate, employees, headquarter);
 		
 		String name = rset.getString(NAME);
 		int minFlightDistance = rset.getInt(MINFLIGHTDISTANCE);

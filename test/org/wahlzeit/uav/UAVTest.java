@@ -21,14 +21,14 @@ public class UAVTest {
 		uavSucess = new UAV(new Engine(EngineType.ELECTRONIC, 1), 
 							new Camera(1024, false), 	
 							"HubsanX4",
-							ManufactorFactory.getInstance("Hubsan", 2004, 2000, "Shanghai"),
+							ManufactorFactory.getInstance().createInstance("Hubsan", 2004, 2000, "Shanghai"),
 							3,
 							true);
 		
 		uavFail = new UAV(new Engine(EngineType.GASOLINE, 1),
 						  new Camera(1024, false), 
 						  "HubsanX4",
-						  ManufactorFactory.getInstance("Hubsan", 2004, 2000, "Shanghai"),
+						  ManufactorFactory.getInstance().createInstance("Hubsan", 2004, 2000, "Shanghai"),
 						  -23, 
 						  false);
 	}
