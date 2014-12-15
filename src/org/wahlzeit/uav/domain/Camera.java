@@ -4,6 +4,10 @@ public class Camera {
 	private int resolution;
 	private boolean infrared;
 	
+	/**
+	 * @methodtype construktor
+	 * 
+	 */
 	public Camera(int resolution, boolean infrared) {
 		super();
 		this.resolution = resolution;

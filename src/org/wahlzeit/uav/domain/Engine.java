@@ -4,6 +4,10 @@ public class Engine {
 	private EngineType motor;
 	private int horsepower;
 	
+	/**
+	 * @methodtype construktor
+	 * 
+	 */
 	public Engine(EngineType motor, int horsepower) {
 		super();
 		this.motor = motor;

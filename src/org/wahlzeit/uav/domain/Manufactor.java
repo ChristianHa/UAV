@@ -8,7 +8,10 @@ public class Manufactor {
 	private int employees;
 	private String headquarter;
 	
-	
+	/**
+	 * @methodtype construktor
+	 * 
+	 */
 	protected Manufactor(String companyName, int foundingDate, int employees,
 			String headquarter) {
 		this.companyName = companyName;
