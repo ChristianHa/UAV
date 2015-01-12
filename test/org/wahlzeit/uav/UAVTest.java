@@ -8,7 +8,7 @@ import org.junit.Test;
 import org.wahlzeit.uav.domain.Camera;
 import org.wahlzeit.uav.domain.Engine;
 import org.wahlzeit.uav.domain.EngineType;
-import org.wahlzeit.uav.domain.ManufactorFactory;
+import org.wahlzeit.uav.domain.ManufactureFactory;
 import org.wahlzeit.uav.domain.UAV;
 
 public class UAVTest {
@@ -21,14 +21,14 @@ public class UAVTest {
 		uavSucess = new UAV(new Engine(EngineType.ELECTRONIC, 1), 
 							new Camera(1024, false), 	
 							"HubsanX4",
-							ManufactorFactory.getInstance().createInstance("Hubsan", 2004, 2000, "Shanghai"),
+							ManufactureFactory.getInstance().createInstance("Hubsan", 2004, 2000, "Shanghai"),
 							3,
 							true);
 		
 		uavFail = new UAV(new Engine(EngineType.GASOLINE, 1),
 						  new Camera(1024, false), 
 						  "HubsanX4",
-						  ManufactorFactory.getInstance().createInstance("Hubsan", 2004, 2000, "Shanghai"),
+						  ManufactureFactory.getInstance().createInstance("Hubsan", 2004, 2000, "Shanghai"),
 						  -23, 
 						  false);
 	}

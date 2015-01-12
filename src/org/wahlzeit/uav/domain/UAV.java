@@ -7,7 +7,7 @@ public class UAV
 	protected Camera cam = new Camera();
 	
 	private String name;
-	private Manufactor manufactor;
+	private Manufacture manufactor;
 	private int minFlightDistance;
 	private boolean hasCamera;
 	
@@ -17,12 +17,12 @@ public class UAV
 	 * @collaboration UAVPhotoCollaboration
 	 */
 	public UAV(Engine engine, Camera cam, String name,
-			Manufactor manufactor, int minFlightDistance, boolean hasCamera) {
+			Manufacture manufacture, int minFlightDistance, boolean hasCamera) {
 		super();
 		this.engine = engine;
 		this.cam = cam;
 		this.name = name;
-		this.manufactor = manufactor;
+		this.manufactor = manufacture;
 		this.minFlightDistance = minFlightDistance;
 		this.hasCamera = hasCamera;
 	}
@@ -37,7 +37,7 @@ public class UAV
 	/**
 	 * @methodtype getMethod
 	 */
-	public Manufactor getManufactor() {
+	public Manufacture getManufactor() {
 		return manufactor;
 	}
 

@@ -1,7 +1,7 @@
 package org.wahlzeit.uav.domain;
 
 
-public class Manufactor {
+public class Manufacture {
 	// NORTHROP_GRUMMAN, LOCKHEED_MARTIN, BOING, UMS_Group, AMAZON, HUBSAN, PARROT, SIMULUS;
 	private String companyName;
 	private int foundingDate;
@@ -12,7 +12,7 @@ public class Manufactor {
 	 * @methodtype construktor
 	 * @collaboration TypeObjectCollaboration
 	 */
-	protected Manufactor(String companyName, int foundingDate, int employees,
+	protected Manufacture(String companyName, int foundingDate, int employees,
 			String headquarter) {
 		this.companyName = companyName;
 		this.foundingDate = foundingDate;

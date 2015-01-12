@@ -55,7 +55,7 @@ public class UAVPhoto extends Photo {
 		int employees = rset.getInt(EMPLOYEES);
 		String headquarter = rset.getString(HEADQUARTER);
 		
-		Manufactor uavmanufactor = ManufactorFactory.getInstance().createInstance(companyname, foundingDate, employees, headquarter);
+		Manufacture uavmanufacture = ManufactureFactory.getInstance().createInstance(companyname, foundingDate, employees, headquarter);
 		
 		String name = rset.getString(NAME);
 		int minFlightDistance = rset.getInt(MINFLIGHTDISTANCE);
@@ -67,7 +67,7 @@ public class UAVPhoto extends Photo {
 		int resolution = rset.getInt(RESOLUTION);
 		boolean infrared = rset.getBoolean(INFRARED);
 		
-		uav = UAVFactory.getInstance(new Engine(motor, horsepower), new Camera(resolution, infrared), name, uavmanufactor, minFlightDistance, hasCamera);
+		uav = UAVFactory.getInstance(new Engine(motor, horsepower), new Camera(resolution, infrared), name, uavmanufacture, minFlightDistance, hasCamera);
 	}
 	
 	@Override
