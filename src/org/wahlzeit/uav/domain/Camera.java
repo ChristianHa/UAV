@@ -6,7 +6,7 @@ public class Camera {
 	
 	/**
 	 * @methodtype construktor
-	 * 
+	 * @collaboration UAVCollaboration
 	 */
 	public Camera(int resolution, boolean infrared) {
 		super();
@@ -14,13 +14,23 @@ public class Camera {
 		this.infrared = infrared;
 	}
 
+	/**
+	 * @methodtype construktor
+	 * @collaboration UAVCollaboration
+	 */
 	public Camera() {
 	}
 
+	/**
+	 * @methodtype getMethod
+	 */
 	public int getResolution() {
 		return resolution;
 	}
 
+	/**
+	 * @methodtype booleanQuery
+	 */
 	public boolean isInfrared() {
 		return infrared;
 	}

@@ -9,6 +9,7 @@ public class UAVFactory {
 	
 	/**
 	 * @methodtype factory
+	 * @collaboration UAVManagerCollaboration
 	 */
 	public static synchronized UAV getInstance(Engine engine, Camera cam, String name,
 			Manufactor manufactor, int minFlightDistance, boolean hasCamera)

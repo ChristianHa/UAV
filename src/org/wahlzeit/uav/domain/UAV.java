@@ -12,9 +12,9 @@ public class UAV
 	private boolean hasCamera;
 	
 	/**
-	 * @methodtype construktor
+	 * @methodtype constructor
 	 * @pre minFlightDistance has to be positive
-	 * 
+	 * @collaboration UAVPhotoCollaboration
 	 */
 	public UAV(Engine engine, Camera cam, String name,
 			Manufactor manufactor, int minFlightDistance, boolean hasCamera) {
@@ -27,18 +27,23 @@ public class UAV
 		this.hasCamera = hasCamera;
 	}
 
-	
+	/**
+	 * @methodtype getMethod
+	 */
 	public String getName() {
 		return name;
 	}
 
-	
+	/**
+	 * @methodtype getMethod
+	 */
 	public Manufactor getManufactor() {
 		return manufactor;
 	}
 
 	
 	/**
+	 * @methodtype getMethod
 	 * @post minFlightDistance is positive
 	 */
 	public int getMinFlightDistance() {
@@ -47,6 +52,9 @@ public class UAV
 	}
 
 	
+	/**
+	 * @methodtype getMethod
+	 */
 	public Engine getEngine() {
 		return engine;
 	}
@@ -55,6 +63,7 @@ public class UAV
 	/**
 	 * @pre hasCamera has to be true
 	 * @post don't return null
+	 * @methodtype getMethod
 	 */
 	public Camera getCam() {
 		assert this.hasCamera == true; //pre
@@ -63,6 +72,9 @@ public class UAV
 	}
 
 	
+	/**
+	 * @methodtype booleanQuery
+	 */
 	public boolean hasCamera() {
 		return hasCamera;
 	}

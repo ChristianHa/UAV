@@ -10,7 +10,7 @@ public class Manufactor {
 	
 	/**
 	 * @methodtype construktor
-	 * 
+	 * @collaboration TypeObjectCollaboration
 	 */
 	protected Manufactor(String companyName, int foundingDate, int employees,
 			String headquarter) {
@@ -20,21 +20,31 @@ public class Manufactor {
 		this.headquarter = headquarter;
 	}
 
+	/**
+	 * @methodtype getMethod
+	 */
 	public String getCompanyName() {
 		return companyName;
 	}
 
 
+	/**
+	 * @methodtype getMethod
+	 */
 	public int getFoundingDate() {
 		return foundingDate;
 	}
 
-
+	/**
+	 * @methodtype getMethod
+	 */
 	public int getEmployees() {
 		return employees;
 	}
 
-
+	/**
+	 * @methodtype getMethod
+	 */
 	public String getHeadquarter() {
 		return headquarter;
 	}

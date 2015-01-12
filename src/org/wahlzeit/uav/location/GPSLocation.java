@@ -9,7 +9,10 @@ public class GPSLocation extends AbstractLocation {
 	protected double latitude;
 	protected double longtitude;
 	
-
+	/**
+	 * @methodtype constructor
+	 * @collaboration LocationCollaboration
+	 */
 	public GPSLocation(double latitude, double longtitude)
 	{
 		this.latitude = latitude;

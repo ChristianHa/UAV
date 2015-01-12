@@ -8,6 +8,10 @@ public class MapcodeLocation extends AbstractLocation {
 
 	protected String mapcode;
 
+	/**
+	 * @methodtype constructor
+	 * @collaboration LocationCollaboration
+	 */
 	public MapcodeLocation(String mapcode){
 		this.mapcode = mapcode;
 	}

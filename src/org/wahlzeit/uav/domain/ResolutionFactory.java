@@ -8,6 +8,7 @@ public class ResolutionFactory {
 	
 	/**
 	 * @methodtype factory
+	 * @collaboration ValueObjectCollaboration
 	 */
 	public static synchronized Resolution getResolution(int width, int height)
 	{

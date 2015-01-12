@@ -8,6 +8,10 @@ public class ManufactorFactory {
 	private static Map<Integer, Manufactor> manufactorMap = new HashMap<>();
 	private static ManufactorFactory manufactorFactory = null;
 	
+	/**
+	 * @methodtype singelton
+	 * @collaboration ManufactorManagerCollaboration
+	 */
 	public static ManufactorFactory getInstance()
 	{
 		if (manufactorFactory == null)
@@ -19,6 +23,7 @@ public class ManufactorFactory {
 	
 	/**
 	 * @methodtype factory
+	 * @collaboration ManufactorManagerCollaboration
 	 */
 	public synchronized Manufactor createInstance(String companyName, int foundingDate, int employees,
 			String headquarter)
