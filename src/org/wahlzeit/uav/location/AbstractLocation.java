@@ -3,41 +3,39 @@ package org.wahlzeit.uav.location;
 
 public abstract class AbstractLocation implements Location {
 	
+	public abstract double[] getPoint();
+	public abstract String getMapcode();
+	public abstract void setMapcode(String mapcode);
+	public abstract String asString();
+	
+	/**
+	 * @methodtype get method
+	 */
 	public double getLatitude()
 	{
-		return doGetLatitude();
+		double[] point = getPoint();
+		return point[0];
 	}
-	abstract double doGetLatitude();
 	
-	public void setLatitude(double latitude)
-	{
-		doSetLatitude(latitude);
-	}
-	abstract void doSetLatitude(double latitude);
-	
+	/**
+	 * @methodtype get method
+	 */
 	public double getLongtitude()
 	{
-		return doGetLongtitude();
+		double[] point = getPoint();
+		return point[1];
 	}
-	abstract double doGetLongtitude();
 		
-		
-	public void setLongtitude(double longtitude)
+	/**
+	 * @methodtype set method
+	 */
+	public void setPoint(double x, double y)
 	{
-		doSetLongtitude(longtitude);
+		doSetPoint(x, y);
 	}
-	abstract void doSetLongtitude(double longtitude);
-
 	
-	public void setMapcode(String mapcode)
-	{
-			doSetMapcode(mapcode);
-	}
-	abstract void doSetMapcode(String mapcode);
-	
-	public String getMapcode()
-	{
-		return doGetMapcode();
-	}
-	abstract String doGetMapcode();
+	/**
+	 * @methodtype get method
+	 */
+	protected abstract void doSetPoint(double x, double y);
 }

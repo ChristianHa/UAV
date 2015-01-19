@@ -23,13 +23,13 @@ public class MapcodeLocationTest extends TestCase {
 	
 	public void testSetLatitude()
 	{
-		mapcode.setLatitude(12.897489);
+		mapcode.setPoint(12.897489, 0.0);
 		assertEquals(Math.round(mapcode.getLatitude()), Math.round(12.897489));
 	}
 	
 	public void testSetLongtitude()
 	{
-		mapcode.setLongtitude(8.4375);
+		mapcode.setPoint(0.0, 8.4375);
 		assertEquals(Math.round(mapcode.getLongtitude()), Math.round(8.4375));
 	}
 

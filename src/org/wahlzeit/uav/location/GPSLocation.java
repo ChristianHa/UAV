@@ -1,13 +1,13 @@
 package org.wahlzeit.uav.location;
 
+import com.mapcode.Mapcode;
 import com.mapcode.MapcodeCodec;
 import com.mapcode.Point;
 import com.mapcode.UnknownMapcodeException;
 
 public class GPSLocation extends AbstractLocation {
 
-	protected double latitude;
-	protected double longtitude;
+	private double[] point;
 	
 	/**
 	 * @methodtype constructor
@@ -15,52 +15,82 @@ public class GPSLocation extends AbstractLocation {
 	 */
 	public GPSLocation(double latitude, double longtitude)
 	{
-		this.latitude = latitude;
-		this.longtitude = longtitude;
+		point[0] = latitude;
+		point[1] = longtitude;
 	}
 	
+	/**
+	 * @methodtype constructor
+	 */
 	public GPSLocation() 
 	{
-		latitude = 0;
-		longtitude = 0;	
+		point[0] = 0;
+		point[1] = 0;
 	}
-	
+
+	/**
+	 * @methodtype get method
+	 */
 	@Override
-	public double doGetLatitude() {
-		return this.latitude;
+	public double[] getPoint() {
+		return point;
 	}
-	
+
+	/**
+	 * @methodtype get method
+	 */
 	@Override
-	public void doSetLatitude(double latitude) {
-		this.latitude = latitude;
+	public String getMapcode() {
+		Mapcode mapcode = MapcodeCodec.encodeToInternational(point[0], point[1]);
+		return mapcode.toString();
+	}
+
+	/**
+	 * @methodtype set method
+	 */
+	@Override
+	public void setMapcode(String mapcode) {
+		Point p;
+		try {
+			p = MapcodeCodec.decode(mapcode);
+			point[0] = p.getLatDeg();
+			point[1] = p.getLonDeg();
+		} catch (UnknownMapcodeException e) {
+			throw new RuntimeException("Decoding error, could not decode mapcode");
+		}
+	}
+
+	/**
+	 * @methodtype set method
+	 */
+	@Override
+	protected void doSetPoint(double x, double y) {
+		if(validateCoordinates(x, y))
+		{
+			point[0] = x;
+			point[1] = y;
+		}
+		else
+		{
+			throw new RuntimeException("The paremters do not match GPS-Coordinates");
+		}
+	}
+
+	private boolean validateCoordinates(double x, double y) {
+		boolean paramsOK = true;
+		
+		if(x < 0 || y < 0)
+			paramsOK = false;
+		if(x > 180)
+			paramsOK = false;
+		if(y > 90)
+			paramsOK = false;
+		
+		return paramsOK;
 	}
 
 	@Override
-	public double doGetLongtitude() {
-		return this.longtitude;
-	}
-	
-	@Override
-	public void doSetLongtitude(double longtitude) {
-		this.longtitude = longtitude; 
-	}
-
-	@Override
-	public String doGetMapcode() {
-		com.mapcode.Mapcode result = MapcodeCodec.encodeToInternational(latitude, longtitude);
-		String mapcode = result.toString();
-		return mapcode;
-	}
-	
-	@Override
-	public void doSetMapcode(String mapcode) {
-			Point p = null;
-			try {
-				p = MapcodeCodec.decode(mapcode);
-			} catch (IllegalArgumentException | UnknownMapcodeException e) {
-				e.printStackTrace();
-			}
-			this.latitude = p.getLatDeg();
-			this.longtitude = p.getLonDeg();
+	public String asString() {
+		return point[10] + " " + point[1];
 	}
 }

@@ -1,12 +1,15 @@
 package org.wahlzeit.uav.location;
 
 public interface Location {
-	double getLatitude();
-	void setLatitude(double latitude);
 	
+	double getLatitude();
 	double getLongtitude();
-	void setLongtitude(double longtitude);
+	
+	double[] getPoint();
+	String getMapcode();
 	
 	void setMapcode(String mapcode);
-	String getMapcode();
+	void setPoint(double x, double y);
+	
+	String asString();
 }

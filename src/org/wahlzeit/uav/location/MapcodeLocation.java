@@ -1,5 +1,6 @@
 package org.wahlzeit.uav.location;
 
+import com.mapcode.Mapcode;
 import com.mapcode.MapcodeCodec;
 import com.mapcode.Point;
 import com.mapcode.UnknownMapcodeException;
@@ -15,60 +16,48 @@ public class MapcodeLocation extends AbstractLocation {
 	public MapcodeLocation(String mapcode){
 		this.mapcode = mapcode;
 	}
-	
-	@Override
-	public double doGetLatitude() {
-		double latitude = getLatitudeFromMapcode();
-		return latitude;
-	}
 
-	private double getLatitudeFromMapcode() {
-		Point p = null;
+	@Override
+	public double[] getPoint() {
+		double[] result = new double [2];
+		Point p;
 		try {
 			p = MapcodeCodec.decode(mapcode);
-		} catch (IllegalArgumentException | UnknownMapcodeException e) {
-			e.printStackTrace();
+			result[0] = p.getLatDeg();
+			result[1] = p.getLonDeg();
+		} catch (UnknownMapcodeException e) {
+			throw new RuntimeException("Decoding error, could not decode mapcode");
 		}
-		return p.getLatDeg();
+		return result;
 	}
 
+	/**
+	 * @methodtype get method
+	 */
 	@Override
-	public void doSetLatitude(double latitude) {
-		double longtitude = getLongtitude();
-		com.mapcode.Mapcode result = MapcodeCodec.encodeToInternational(latitude, longtitude);
-		this.mapcode = result.toString();
+	public String getMapcode() {
+		return mapcode;
 	}
 
+	/**
+	 * @methodtype set method
+	 */
 	@Override
-	public double doGetLongtitude() {
-		double longtitude = getLongtitudeFromMapcode();
-		return longtitude;
-	}
-
-	private double getLongtitudeFromMapcode() {
-		Point p = null;
-		try {
-			p = MapcodeCodec.decode(mapcode);
-		} catch (IllegalArgumentException | UnknownMapcodeException e) {
-			e.printStackTrace();
-		}
-		return p.getLonDeg();
-	}
-
-	@Override
-	public void doSetLongtitude(double longtitude) {
-		double latitude = getLatitude();
-		com.mapcode.Mapcode result = MapcodeCodec.encodeToInternational(latitude, longtitude);
-		this.mapcode = result.toString();
-	}
-
-	@Override
-	public void doSetMapcode(String mapcode) {
+	public void setMapcode(String mapcode) {
 		this.mapcode = mapcode;
 	}
 
 	@Override
-	public String doGetMapcode() {
-		return this.mapcode;
+	public String asString() {
+		return mapcode;
+	}
+
+	/**
+	 * @methodtype set method
+	 */
+	@Override
+	protected void doSetPoint(double x, double y) {
+		Mapcode mapcode = MapcodeCodec.encodeToInternational(x, y);
+		this.mapcode = mapcode.toString();
 	}
 }
