@@ -47,7 +47,13 @@ public class UAV
 	 * @post minFlightDistance is positive
 	 */
 	public int getMinFlightDistance() {
-		assert this.minFlightDistance > 0;
+		try {
+			assert this.minFlightDistance > 0;
+		}
+		catch(AssertionError e)
+		{
+			throw new RuntimeException("Assertion Error: minFlightDistance must be positive!");
+		}
 		return minFlightDistance;
 	}
 
