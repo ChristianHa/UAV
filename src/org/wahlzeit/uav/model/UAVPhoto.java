@@ -1,4 +1,4 @@
-package org.wahlzeit.uav.domain;
+package org.wahlzeit.uav.model;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;

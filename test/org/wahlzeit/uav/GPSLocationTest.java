@@ -4,7 +4,7 @@ import static org.junit.Assert.*;
 
 import org.junit.Before;
 import org.junit.Test;
-import org.wahlzeit.uav.location.GPSLocation;
+import org.wahlzeit.uav.location.impl.GPSLocation;
 
 public class GPSLocationTest {
 	GPSLocation loc;

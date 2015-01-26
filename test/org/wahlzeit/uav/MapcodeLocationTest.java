@@ -1,6 +1,6 @@
 package org.wahlzeit.uav;
 
-import org.wahlzeit.uav.location.MapcodeLocation;
+import org.wahlzeit.uav.location.impl.MapcodeLocation;
 
 import junit.framework.TestCase;
 

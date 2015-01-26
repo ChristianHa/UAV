@@ -23,7 +23,7 @@ package org.wahlzeit.model;
 import java.sql.*;
 
 import org.wahlzeit.services.*;
-import org.wahlzeit.uav.domain.UAVPhoto;
+import org.wahlzeit.uav.model.UAVPhoto;
 
 /**
  * 

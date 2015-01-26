@@ -1,4 +1,6 @@
-package org.wahlzeit.uav.location;
+package org.wahlzeit.uav.location.impl;
+
+import org.wahlzeit.uav.location.Location;
 
 
 public abstract class AbstractLocation implements Location {

@@ -5,11 +5,11 @@ import static org.junit.Assert.assertTrue;
 
 import org.junit.Before;
 import org.junit.Test;
-import org.wahlzeit.uav.domain.Camera;
-import org.wahlzeit.uav.domain.Engine;
-import org.wahlzeit.uav.domain.EngineType;
-import org.wahlzeit.uav.domain.ManufactureFactory;
-import org.wahlzeit.uav.domain.UAV;
+import org.wahlzeit.uav.model.Camera;
+import org.wahlzeit.uav.model.Engine;
+import org.wahlzeit.uav.model.EngineType;
+import org.wahlzeit.uav.model.ManufactureFactory;
+import org.wahlzeit.uav.model.UAV;
 
 public class UAVTest {
 

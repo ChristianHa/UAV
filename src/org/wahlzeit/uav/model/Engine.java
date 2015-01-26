@@ -1,4 +1,4 @@
-package org.wahlzeit.uav.domain;
+package org.wahlzeit.uav.model;
 
 public class Engine {
 	private EngineType motor;

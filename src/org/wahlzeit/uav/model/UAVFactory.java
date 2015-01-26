@@ -1,4 +1,4 @@
-package org.wahlzeit.uav.domain;
+package org.wahlzeit.uav.model;
 
 import java.util.Map;
 import java.util.WeakHashMap;

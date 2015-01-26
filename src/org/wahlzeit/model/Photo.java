@@ -28,8 +28,8 @@ import java.sql.SQLException;
 import org.wahlzeit.services.DataObject;
 import org.wahlzeit.services.EmailAddress;
 import org.wahlzeit.services.Language;
-import org.wahlzeit.uav.location.GPSLocation;
 import org.wahlzeit.uav.location.Location;
+import org.wahlzeit.uav.location.impl.GPSLocation;
 import org.wahlzeit.utils.StringUtil;
 
 /**
